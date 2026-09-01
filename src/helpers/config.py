@@ -9,6 +9,13 @@ class Settings(BaseSettings):
     FILE_ALLOWED_TYPES:list
     
     FILE_CHUNK_SIZE:int
+    ################################################################################################
+    
+    POSTGRES_USERNAME:str
+    POSTGRES_PASSWORD:str
+    POSTGRES_HOST:str
+    POSTGRES_PORT:int
+    POSTGRES_MAIN_DATABASE:str
     
     class Config:
         env_file = ".env"

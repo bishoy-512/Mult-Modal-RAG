@@ -13,4 +13,5 @@ class DataEnums(Enum):
     FILE_PROCESSING_FAILED = "File Processing Failed"
     FILE_PROCESSING_SUCCESSFULLY = "File Processing SUCCESSFULLY Done"
     
+    PROJECT_NOT_EXIST = "Project Is Not Exist"
     

@@ -4,3 +4,5 @@ class ExtensionsEnum(Enum):
     TXT = '.txt'
     PDF = '.pdf'
     IMAGE = [".jpg", ".jpeg", ".png"]
+    WORD = '.docx'
+    POWERPOINT = '.pptx'
