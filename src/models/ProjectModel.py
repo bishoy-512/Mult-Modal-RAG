@@ -7,12 +7,14 @@ class ProjectModel(BaseModel):
         super().__init__(db_client)
 
     async def create_new_project(self , project_id : str):
-        project = Project(project_id = project_id)
-        async with self.db_client() as session:
-            async with session.begin():
-                session.add(project)
-            await session.commit()
-            await session.refresh(project)
+        project = await self.get_exist_project(project_id=project_id)
+        if not project:
+            project = Project(project_id=project_id)
+            async with self.db_client() as session:
+                async with session.begin():
+                    session.add(project)
+                await session.commit()
+                await session.refresh(project)
         return project
     
     async def get_exist_project(self, project_id : str):
